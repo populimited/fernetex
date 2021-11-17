@@ -20,7 +20,7 @@ defmodule Fernet.Mixfile do
   end
 
   def application do
-    [extra_applications: [:logger]]
+    [extra_applications: [:logger, :crypto, :eex]]
   end
 
   defp package do
@@ -38,7 +38,7 @@ defmodule Fernet.Mixfile do
     [
       # Dev & Test dependencies
       {:credo, "~> 1.5.6", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.1.0", only: :dev},
+      {:dialyxir, "~> 1.1.0", only: :dev, runtime: false},
       {:earmark, "~> 1.2", only: :dev},
       {:ex_doc, "~> 0.15", only: :dev},
       {:poison, "~> 4.0.1", only: [:dev, :test]},
